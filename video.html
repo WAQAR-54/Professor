@@ -1,9 +1,387 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
+    <title>Video Downloader</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Yinka Enoch Adedokun" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="style2.css" />
+
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+    ></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .hover {
+        font-family: Helevetica, sans-serif;
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+        width: 150px;
+        height: 50px;
+        /* background: #f0f0f0; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin: 2px;
+        border: solid 0.8px #f0f0f0;
+        border-radius: 6px;
+      }
+      .hover:hover .hover-line-top {
+        transform: scale(1);
+        transform-origin: left;
+      }
+      .hover:hover .hover-line-right {
+        transform: scale(1);
+        transform-origin: top;
+        transition-delay: 0.35s;
+      }
+      .hover:hover .hover-line-bottom {
+        transform: scale(1);
+        transform-origin: right;
+        transition-delay: 0.65s;
+      }
+      .hover:hover .hover-line-left {
+        transform: scale(1);
+        transform-origin: bottom;
+        transition-delay: 0.95s;
+      }
+      .hover-line {
+        /* background: #333; */
+        background-color: #caedf7;
+        position: absolute;
+        transition: transform 0.2s ease-in-out;
+      }
+      .hover-line-top {
+        width: 100%;
+        height: 2px;
+        top: 0;
+        transform: scale(0);
+        transform-origin: right;
+      }
+
+      .hover-line-right {
+        width: 2px;
+        height: 100%;
+        right: 0;
+        transform: scale(0);
+        transform-origin: bottom;
+        transition-delay: 0.35s;
+      }
+
+      .hover-line-bottom {
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        transform: scale(0);
+        transform-origin: left;
+        transition-delay: 0.65s;
+      }
+
+      .hover-line-left {
+        width: 2px;
+        height: 100%;
+        left: 0;
+        transform: scale(0);
+        transform-origin: top;
+        transition-delay: 0.95s;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <!-- <button class="first">First</button> -->
+    <a href="#" class="hover first test">
+      <span class="hover-line hover-line-top"></span>
+      <span class="hover-line hover-line-right"></span>
+      <span class="hover-line hover-line-bottom"></span>
+      <span class="hover-line hover-line-left"></span>
+      CEO
+    </a>
+    <!-- <button class="second">Second 2</button> -->
+    <a href="#" class="hover Second">
+      <span class="hover-line hover-line-top"></span>
+      <span class="hover-line hover-line-right"></span>
+      <span class="hover-line hover-line-bottom"></span>
+      <span class="hover-line hover-line-left"></span>
+      CFO
+    </a>
+    <!-- <button class="third">Third 3</button> -->
+    <a href="#" class="hover Third">
+      <span class="hover-line hover-line-top"></span>
+      <span class="hover-line hover-line-right"></span>
+      <span class="hover-line hover-line-bottom"></span>
+      <span class="hover-line hover-line-left"></span>
+      COO
+    </a>
+    <!-- <button class="fourth">Fourth 4</button> -->
+    <a href="#" class="hover fourth">
+      <span class="hover-line hover-line-top"></span>
+      <span class="hover-line hover-line-right"></span>
+      <span class="hover-line hover-line-bottom"></span>
+      <span class="hover-line hover-line-left"></span>
+      CHRO
+    </a>
+    <!-- <button class="fifth">Five 5</button> -->
+    <a href="#" class="hover fifth">
+      <span class="hover-line hover-line-top"></span>
+      <span class="hover-line hover-line-right"></span>
+      <span class="hover-line hover-line-bottom"></span>
+      <span class="hover-line hover-line-left"></span>
+      CISO
+    </a>
+    <!-- <button class="sixth">Six 6</button> -->
+    <a href="#" class="hover sixth">
+      <span class="hover-line hover-line-top"></span>
+      <span class="hover-line hover-line-right"></span>
+      <span class="hover-line hover-line-bottom"></span>
+      <span class="hover-line hover-line-left"></span>
+      CMO
+    </a>
+    <a href="#" class="hover sixth">
+      <span class="hover-line hover-line-top"></span>
+      <span class="hover-line hover-line-right"></span>
+      <span class="hover-line hover-line-bottom"></span>
+      <span class="hover-line hover-line-left"></span>
+      CTO (Tech)
+    </a>
+    <a href="#" class="hover sixth">
+      <span class="hover-line hover-line-top"></span>
+      <span class="hover-line hover-line-right"></span>
+      <span class="hover-line hover-line-bottom"></span>
+      <span class="hover-line hover-line-left"></span>
+      CRO (Risk)
+    </a>
+    <a href="#" class="hover sixth">
+      <span class="hover-line hover-line-top"></span>
+      <span class="hover-line hover-line-right"></span>
+      <span class="hover-line hover-line-bottom"></span>
+      <span class="hover-line hover-line-left"></span>
+      Tax Leader
+    </a>
+    <a href="#" class="hover sixth">
+      <span class="hover-line hover-line-top"></span>
+      <span class="hover-line hover-line-right"></span>
+      <span class="hover-line hover-line-bottom"></span>
+      <span class="hover-line hover-line-left"></span>
+      General Counsel
+    </a>
+
+    <a href="#" class="hover sixth">
+      <span class="hover-line hover-line-top"></span>
+      <span class="hover-line hover-line-right"></span>
+      <span class="hover-line hover-line-bottom"></span>
+      <span class="hover-line hover-line-left"></span>
+      Board Exec
+    </a>
+
+    <div class="data">
+      <p>Hide or Show Me</p>
+      <a href="https://youtu.be/ValagvpkYpI"
+        >Click here to show video tutorial</a
+      >
+    </div>
+    <div class="data2">
+      <p>Hide or Show Me 2</p>
+      <a href="https://youtu.be/ValagvpkYpI"
+        >Click here to show video tutorial</a
+      >
+    </div>
+    <div class="data3">
+      <p>Hide or Show Me 3</p>
+      <a href="https://youtu.be/ValagvpkYpI"
+        >Click here to show video tutorial</a
+      >
+    </div>
+    <div class="data4">
+      <p>Hide or Show Me 4</p>
+      <a href="https://youtu.be/ValagvpkYpI"
+        >Click here to show video tutorial</a
+      >
+    </div>
+    <div class="data5">
+      <p>Hide or Show Me 5</p>
+      <a href="https://youtu.be/ValagvpkYpI"
+        >Click here to show video tutorial</a
+      >
+    </div>
+    <div class="data6">
+      <p>Hide or Show Me 6</p>
+      <a href="https://youtu.be/ValagvpkYpI"
+        >Click here to show video tutorial</a
+      >
+    </div>
+    <!-- 
+    
+    Follow my channel for more videos
+     youtube.com/channel/UCbEorf9G1QR_KXGlo6xC-HQ/
+    -->
+    <script>
+      // First button Script
+
+      $(".data").show();
+      jQuery(".first").on("click", function () {
+        jQuery(".data").toggle();
+      });
+      $(".first").click(function () {
+        $(".data2").hide();
+      });
+      $(".first").click(function () {
+        $(".data3").hide();
+      });
+      $(".first").click(function () {
+        $(".data4").hide();
+      });
+      $(".first").click(function () {
+        $(".data5").hide();
+      });
+      $(".first").click(function () {
+        $(".data6").hide();
+      });
+
+      // End First button script
+
+      // Start Second button
+
+      $(".data2").hide();
+      jQuery(".second").on("click", function () {
+        jQuery(".data2").toggle();
+      });
+      $(".second").click(function () {
+        $(".data").hide();
+      });
+      $(".second").click(function () {
+        $(".data3").hide();
+      });
+      $(".second").click(function () {
+        $(".data4").hide();
+      });
+      $(".second").click(function () {
+        $(".data5").hide();
+      });
+      $(".second").click(function () {
+        $(".data6").hide();
+      });
+      // End Second Button Script
+
+      // Start  Third button Script
+
+      $(".data3").hide();
+      jQuery(".third").on("click", function () {
+        jQuery(".data3").toggle();
+      });
+      $(".third").click(function () {
+        $(".data").hide();
+      });
+      $(".third").click(function () {
+        $(".data2").hide();
+      });
+      $(".third").click(function () {
+        $(".data4").hide();
+      });
+      $(".third").click(function () {
+        $(".data5").hide();
+      });
+      $(".third").click(function () {
+        $(".data6").hide();
+      });
+      // ENd Third Button Script
+
+      // Start Forth button
+
+      $(".data4").hide();
+      jQuery(".fourth").on("click", function () {
+        jQuery(".data4").toggle();
+      });
+      $(".fourth").click(function () {
+        $(".data").hide();
+      });
+      $(".fourth").click(function () {
+        $(".data2").hide();
+      });
+      $(".fourth").click(function () {
+        $(".data3").hide();
+      });
+      $(".fourth").click(function () {
+        $(".data5").hide();
+      });
+      $(".fourth").click(function () {
+        $(".data6").hide();
+      });
+
+      // End script
+
+      // Start Fifth button
+      $(".data5").hide();
+      jQuery(".fifth").on("click", function () {
+        jQuery(".data5").toggle();
+      });
+      $(".fifth").click(function () {
+        $(".data").hide();
+      });
+      $(".fifth").click(function () {
+        $(".data2").hide();
+      });
+      $(".fifth").click(function () {
+        $(".data3").hide();
+      });
+      $(".fifth").click(function () {
+        $(".data4").hide();
+      });
+      $(".fifth").click(function () {
+        $(".data6").hide();
+      });
+      // ENd fifth button
+
+      // Start sixth button
+      $(".data6").hide();
+      jQuery(".sixth").on("click", function () {
+        jQuery(".data6").toggle();
+      });
+      $(".sixth").click(function () {
+        $(".data").hide();
+      });
+      $(".sixth").click(function () {
+        $(".data2").hide();
+      });
+      $(".sixth").click(function () {
+        $(".data3").hide();
+      });
+      $(".sixth").click(function () {
+        $(".data4").hide();
+      });
+      $(".sixth").click(function () {
+        $(".data5").hide();
+      });
+      // ENd sixth button
+    </script>
+  </body>
 </html>
